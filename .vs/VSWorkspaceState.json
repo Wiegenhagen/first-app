@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\app"
+    "\\src\\app",
+    "\\src\\app\\home",
+    "\\src\\app\\housing-location"
   ],
-  "SelectedNode": "\\src\\app\\app.component.ts",
+  "SelectedNode": "\\src\\app\\housing-location\\housing-location.component.css",
   "PreviewInSolutionExplorer": false
 }
