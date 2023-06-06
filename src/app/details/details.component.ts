@@ -61,11 +61,19 @@ export class DetailsComponent {
     email: new FormControl('')
   });
 
-  constructor() {
-    /*id is used as a param to retrieve the information about the specified listing*/
+  /*constructor() {
+    /*id is used as a param to retrieve the information about the specified listing/
     const housingLocationId = Number(this.route.snapshot.params['id']);
     this.housingLocation = this.housingService.getHousingLocationById(housingLocationId);
+  } */
+  ///update the constructor to use the new asynchronous version of the getHousingLocationById method.
+  constructor() {
+    const housingLocationId = parseInt(this.route.snapshot.params['id'], 10);
+    this.housingService.getHousingLocationById(housingLocationId).then(housingLocation => {
+      this.housingLocation = housingLocation;
+    });
   }
+
   /*Method used to allow the click acces and to load the forms and the values of the var*/
   submitApplication() {
     this.housingService.submitApplication(

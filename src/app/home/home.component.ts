@@ -32,16 +32,24 @@ export class HomeComponent {
   //housingLocationList: Housinglocation[] = [];
   filteredLocationList: Housinglocation[] = []; ///inserting the new array for the filter function on the page. filterLocationList will hold values that match the search criteria entered by user
   housingService: HousingService = inject(HousingService);
-    housingLocationList: Housinglocation[];
+    housingLocationList!: Housinglocation[];
 
   /*constructor() {
     this.housingLocationList = this.housingService.getAllHousingLocations();
   }*/ ///old constructor
 
-  constructor() {
+  /*constructor() {
     this.housingLocationList = this.housingService.getAllHousingLocations(); // add the total set of housinf locations values to the filteredLocationList when the page loads
     this.filteredLocationList = this.housingLocationList;
+  }*/
+  //update the constructor to use the new asynchronous version
+  constructor() {
+    this.housingService.getAllHousingLocations().then((housingLocationList: Housinglocation[]) => {
+      this.housingLocationList = housingLocationList;
+      this.filteredLocationList = housingLocationList;
+    });
   }
+
   ///Filter function used to filter the listings based on user input . uses string to compare input against the housingLocation.city property
   filterResults(text: string) {
     if (!text) {
