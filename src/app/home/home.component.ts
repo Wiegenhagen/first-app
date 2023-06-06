@@ -9,11 +9,15 @@ import { HousingService } from '../housing.service';
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule,
-    HousingLocationComponent  ],
+    HousingLocationComponent],
+  /* Template contains a form that allows a input section where the user can type in a city name to filter the array of data. 
+  A button was also created with the class primary (so just a normal button), this button is used for the Search option
+  THe housing location component was inserted here and in the tag a ngfor is used to loop through the data in the array located in the housing location component
+  the variable housingLocation stores the name and the [] binds the data*/
   template: `
   <section>
     <form>
-      <input type="text" placeholder="Filter by city">
+      <input type="text" placeholder="Filter by city">     
       <button class="primary" type="button">Search</button>
     </form>
   </section>
