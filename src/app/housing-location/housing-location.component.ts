@@ -8,6 +8,8 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterModule],
   /*Anchor tag a is added to route the page to the selected listing id*/
+  // template is how the information is going to be displayed. First the image, then the name and the location. On learn more it will route using the id of the listing to a different page
+  //showing additional information
   template: `
   <section class="listing">
     <img class="listing-photo" [src]="housingLocation.photo" alt="Exterior photo of {{housingLocation.name}}">

@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { HomeComponent } from './home/home.component'; // Import homecomponent that was create 
+import { HomeComponent } from './home/home.component'; // Import homecomponent that was created 
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [HomeComponent,
-  RouterModule  ],
+    RouterModule],
+  /*anchor tag is added to allow routing when clicking on on the header*/
   template: `
   <main>
     <a [routerLink]="['/']">
